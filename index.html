@@ -1,0 +1,67 @@
+<html><head>
+<meta charset="utf-8">
+<title>个人搜索引擎</title>
+<link rel="icon" type="image/ico" href="favicon.ico">
+</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html{
+			width: 100%;
+			height: 100%;
+			background: transparent;
+			font-size: 60.5%;
+			font-weight: bold;
+		}
+		iframe{
+			border: none;
+		}
+		.search{width: 50%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-30%);}
+		.search input{width: 90%;height: 30px;border-radius: 3px;opacity: 0.7;padding-left: 10px;font-size: 1.4em;line-height: 1em;}
+		.search a{color: #ffffff;text-decoration: none;height: 26px;border-radius: 3px;border: 1px solid #ffffff;display: inline-block;vertical-align: middle;line-height: 26px;padding: 0 5px;}
+		/*.ani{display: none;}*/
+		.ani.active{display: block;}
+		.search p{font-family: cursive;font-size: 4em;text-align: center;line-height: 108px;color: #ffffff;}
+	</style>
+
+	<body>
+
+<iframe class="ani" src="" width="100%" height="100%"></iframe>
+
+
+	<div class="search">
+		<p>Write less, do more！ &nbsp;&nbsp;&nbsp;&nbsp;</p>
+		<input type="text" id="word" />
+		<a href="http://www.baidu.com/s?word=" onclick="this.href+=document.getElementById('word').value">
+			搜索
+		</a>
+	</div>
+
+	<script type="text/javascript">
+		
+		var id = document.getElementById('word');
+		id.onkeydown=function(e){
+			
+			if(e.keyCode==13){
+				if(id.val() == ""){
+					return false;
+				}
+				location.href = "http://www.baidu.com/s?word=" + id.value;
+			}
+		};
+
+		
+			var num = Math.round(Math.random()*10)+1;
+			if( num >=10 || num == 6){
+				num = num - 2;
+			}
+			document.getElementsByClassName("ani")[0].setAttribute("src","http://www.jq22.com/js/a"+num+".html")
+			// $(".ani").removeClass("active");
+			// $(".ani").eq(num).addClass("active");
+		
+	
+	</script>
+	</body>
+</html>
